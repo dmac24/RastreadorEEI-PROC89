@@ -17,7 +17,7 @@ function App() {
         headerShown: false
       }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Localización de la EEI" component={IssLocationScreen} />
+        <Stack.Screen name="IssLocationScreen" component={IssLocationScreen} />
         <Stack.Screen name="MeteorScreen" component={MeteorScreen} />
         <Stack.Screen name="UpdateScreen" component={UpdateScreen} />
       </Stack.Navigator>

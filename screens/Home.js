@@ -6,7 +6,9 @@ import {
     SafeAreaView,
     Platform,
     StatusBar,
-    TouchableOpacity
+    TouchableOpacity,
+    ImageBackground,
+    Image
 } from "react-native";
 
 export default class HomeScreen extends Component {
@@ -14,28 +16,26 @@ export default class HomeScreen extends Component {
       return (
         <View style={styles.container}>
           <SafeAreaView style={styles.droidSafeArea} />
+          <ImageBackground source={require('../assets/bg.png')} style={styles.backgroundImage}>
             <View style={styles.titleBar}>
               <Text style={styles.titleText}>Aplicación rastreadora de la EEI</Text>
             </View>
   
-            <TouchableOpacity
-              style={styles.routeCard}>
+            <TouchableOpacity style={styles.routeCard}>
               <Text style={styles.routeText}>Localización EEI</Text>
               <Text style={styles.knowMore}>{'Más información --->'}</Text>
-
             </TouchableOpacity>
   
             <TouchableOpacity style={styles.routeCard}>
               <Text style={styles.routeText}>Meteoritos</Text>
               <Text style={styles.knowMore}>{'Más información --->'}</Text>
-             
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.routeCard}>
               <Text style={styles.routeText}>Actualizaciones</Text>
               <Text style={styles.knowMore}>{'Más información --->'}</Text>
-            
             </TouchableOpacity>
-          
+            </ImageBackground>
         </View>
       );
     }
@@ -54,7 +54,8 @@ export default class HomeScreen extends Component {
       alignItems: 'center',
     },
     titleText: {
-      fontSize: 40,
+      flex: 2.5,
+      fontSize: 28,
       fontWeight: 'bold',
       color: 'white',
     },
