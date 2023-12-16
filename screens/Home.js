@@ -11,43 +11,83 @@ import {
 
 export default class HomeScreen extends Component {
     render() {
-        return (
-            <View style={styles.container}>
-                <SafeAreaView style={styles.droidSafeArea}/>
-                    <View style={styles.titleBar}>
-                        <Text style={styles.titleText}>Aplicación Rastreador de la EEI</Text>
-                    </View>
-                    <TouchableOpacity>
-                        <Text>Localización de la EEI</Text>
-                    </TouchableOpacity>
+      return (
+        <View style={styles.container}>
+          <SafeAreaView style={styles.droidSafeArea} />
+            <View style={styles.titleBar}>
+              <Text style={styles.titleText}>Aplicación rastreadora de la EEI</Text>
             </View>
-        );
-    }
-}
+  
+            <TouchableOpacity
+              style={styles.routeCard}>
+              <Text style={styles.routeText}>Localización EEI</Text>
+              <Text style={styles.knowMore}>{'Más información --->'}</Text>
 
-const styles = StyleSheet.create({
+            </TouchableOpacity>
+  
+            <TouchableOpacity style={styles.routeCard}>
+              <Text style={styles.routeText}>Meteoritos</Text>
+              <Text style={styles.knowMore}>{'Más información --->'}</Text>
+             
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.routeCard}>
+              <Text style={styles.routeText}>Actualizaciones</Text>
+              <Text style={styles.knowMore}>{'Más información --->'}</Text>
+            
+            </TouchableOpacity>
+          
+        </View>
+      );
+    }
+  }
+  
+  const styles = StyleSheet.create({
     container: {
-        flex: 1
+      flex: 1,
     },
     droidSafeArea: {
-        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+      marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     },
     titleBar: {
-        flex: 0.15,
-        justifyContent: "center",
-        alignItems: "center"
+      flex: 0.15,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     titleText: {
-        fontSize: 40,
-        fontWeight: "bold",
-        color: "white"
+      fontSize: 40,
+      fontWeight: 'bold',
+      color: 'white',
     },
     routeCard: {
-        flex: 0.25,
-        marginLeft: 50,
-        marginRight: 50,
-        marginTop: 50,
-        borderRadius: 30,
-        backgroundColor: 'white'
+      flex: 0.35,
+      marginLeft: 50,
+      marginRight: 50,
+      marginTop: 50,
+      borderRadius: 30,
+      backgroundColor: 'white',
     },
-});
+    routeText: {
+      fontSize: 30,
+      fontWeight: 'bold',
+      color: 'black',
+      marginTop: 75,
+      paddingLeft: 30,
+    },
+    knowMore: {
+      paddingLeft: 30,
+      color: 'red',
+      fontSize: 15,
+    },
+    backgroundImage: {
+      flex: 1,
+      justifyContent: 'center',
+    },
+    iconImage: {
+      position: 'absolute',
+      height: 200,
+      width: 200,
+      resizeMode: 'contain',
+      right: 20,
+      top: -80,
+    },
+  });
